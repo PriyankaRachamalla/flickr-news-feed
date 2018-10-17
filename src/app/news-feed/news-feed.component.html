@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="searchDiv">
+    <h4>Search Images</h4>
+    <input type="text" #searchInput name="searchInput" />
+    <button (click)="searchImages(searchInput.value)">Search</button>
+  </div>
+  <div *ngIf="showSearched">
+    <div class="row">
+      <div *ngFor="let image of searchTagImages" class="column">
+        <img src={{image.media.m}} />
+        <div class="imageTag">{{image.tags}}</div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showAllImages">
+    <div class="row">
+      <div *ngFor="let image of publicImages" class="column">
+        <img src={{image.media.m}} />
+        <div class="imageTag">{{image.tags}}</div>
+      </div>
+    </div>
+  </div>
+</div>
